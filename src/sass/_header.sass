@@ -1,0 +1,137 @@
+.header
+	justify-content: space-between
+	font-size: 12px
+	min-height: 120px
+	&-wrapper
+		position: relative
+		background-color: $accent
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center top
+		min-height: 400px
+		&:after
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			position: absolute
+			background-color: #4a5666
+			opacity: .5
+		&:before
+			content: ''
+			position: absolute
+			right: 0
+			bottom: 0
+			width: 570px
+			height: 570px
+			background-image: url(../img/bg-1.png)
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+	.logo
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column
+		justify-content: center
+		img
+			max-width: 190px	
+		span
+			margin: 0 0 0 auto
+			color: #ffffff
+			font-family: Light
+nav
+	ul
+		align-items: center
+		li
+			display: inline-block
+			margin: 0 15px
+			a
+				font-weight: 400
+				text-transform: uppercase
+				color: #fff
+				display: inline-block
+				position: relative
+				padding-bottom: 3px
+				&::before
+					content: ''
+					bottom: 0
+					width: 0
+					height: 2px
+					position: absolute
+					background-color: #aeb1b2
+					transition: width .25s ease-in-out
+				&:hover
+					&::before
+						width: 100%
+.menu-active
+	&::before
+		width: 100%
+.feedback
+	display: flex
+	align-items: center
+	a:first-child
+		color: #ffffff
+		font-size: 16px
+		margin-right: 20px
+		strong
+			font-size: 20px
+			font-weight: 400
+			
+.content
+	color: #ffffff
+	padding: 100px 0 150px 0
+	&-title
+		width: 35%
+		h1
+			text-transform: uppercase
+			font-size: 48px
+			position: relative
+			padding-bottom: 20px
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				bottom: 0
+				height: 2px
+				width: 20%
+				background-color: $line
+		p
+			margin: 20px 0
+			font-family: Light
+		a
+			color: #ffffff
+			transition: color .25s ease
+			&:hover
+				color: $link
+	&-list
+		min-width: 250px
+		margin: 16px 0 0 100px
+.list
+	&__item
+		width: 100%
+		position: relative
+		padding-left: 75px
+		min-height: 55px
+		margin-bottom: 30px
+		color: #fff
+		span
+			position: absolute
+			display: inline-block
+			left: 0
+			top: 0
+			width: 55px
+			height: 55px
+			border: 3px solid $icon
+			border-radius: 50%
+			background-repeat: no-repeat
+			background-size: 25px
+			background-position: center
+		h4
+			text-transform: uppercase
+			font-size: 12px
+			padding-top: 7px
+		p
+			font-size: 12px
+			font-family: Light
+			margin-top: 7px

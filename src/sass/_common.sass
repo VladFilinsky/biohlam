@@ -1,0 +1,113 @@
+/* ШРИФТЫ */
++font(Roboto, RobotoRegular)
++font(Bold, RobotoBold)
++font(Light, RobotoLight)
++font(Medium, RobotoMedium)
+// ОСНОВНЫЕ ЦВЕТА
+$accent: #4a5666
+$icon: #385991
+$grey: #757575
+$text: #333333
+$link: #848b94
+$line: #75777d
+
+body
+  font-family: 'Roboto', sans-serif
+  background: #FFF
+  line-height: 1.4
+  overflow-x: hidden
+  width: 100%
+  font-weight: 300
+a
+	text-decoration: none
+img
+	width: 100%
+	display: inline-block
+	height: auto
+h2 
+  font-family: Bold, sans-serif
+  font-size: 24px
+  line-height: 1.1
+  text-transform: uppercase
+header, footer, section
+	position: relative
+	z-index: 1
+	display: flex
+	flex-wrap: wrap
+	max-width: 1280px
+	margin: 0 auto
+.flex
+	display: flex
+	flex-wrap: wrap
+.btn
+	display: inline-block
+	padding: 10px 20px
+	text-transform: uppercase
+	font-size: 12px
+	background-color: $text
+	box-shadow: 0px 3px 6.65px 0.35px rgba(0, 0, 1, 0.09)
+	color: #fff
+	transition: color, background-color .25s ease-in-out
+	&:hover
+		color: $text
+		background-color: #fff
+	&:active
+		color: $text
+		background-color: darken(#fff, 20%)
+		// Заголовок секции
+.section-title
+	margin-top: 80px
+	width: 100%
+	position: relative
+	flex-wrap: no-wrap
+	justify-content: space-between
+	color: #333
+	h2
+		font-size: 22px
+		line-height: 1.45
+		position: relative
+		display: inline-block
+		span
+			font-family: Light
+	&__icon
+		display: inline-block
+		width: 55px
+		height: 55px
+		transform: translateY(-25%)
+		border: 2px solid #e1e1e1
+		border-radius: 50%
+		background-repeat: no-repeat
+		background-size: 25px
+		background-position: center
+.line
+	display: inline-block
+	flex-grow: 1
+	height: 100%
+	margin: 14px 15px 0 15px
+	border-top: 1px solid #acacac
+// Список с изображением
+.iconList
+	li
+		padding: 0 50px 0 30px
+		position: relative
+		margin-bottom: 20px
+		color: $accent
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			background-repeat: no-repeat
+			background-position: center
+// Круглые иконки
+.iconbox
+	span
+		display: inline-block
+		margin-right: 10px
+		width: 50px
+		height: 50px
+		background-color: #e8e8e8
+		border-radius: 50%
+		background-repeat: no-repeat
+		background-size: 25px
+		background-position: center
