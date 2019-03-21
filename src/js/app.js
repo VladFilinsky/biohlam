@@ -47,22 +47,22 @@ $(document).ready(function() {
   $('span.stage__nav-next').parent().after('<span class="stage__nav-text">i этап</span>');
 
 	 	 if( hash === 'floor-1') {
-	 	$('span.stage__nav-text').text('i этаж');
+	 	$('span.stage__nav-text').text('i этап');
 	 	$('.stage__floor').find('li > a').removeClass();
 	 	$("a[href='#" + hash + "']").addClass('stage__floor-active');
 	 }
 	 else if(hash === 'floor-2') {
-	 	$('span.stage__nav-text').text('ii этаж');
+	 	$('span.stage__nav-text').text('ii этап');
 	 	$('.stage__floor').find('li > a').removeClass();
 	 	$("a[href='#" + hash + "']").addClass('stage__floor-active');
 	 }
 	 	 else if(hash === 'floor-3') {
-	 	$('span.stage__nav-text').text('iii этаж');
+	 	$('span.stage__nav-text').text('iii этап');
 	 	$('.stage__floor').find('li > a').removeClass();
 	 	$("a[href='#" + hash + "']").addClass('stage__floor-active');
   }
   else if(hash === 'floor-4') {
-	 	$('span.stage__nav-text').text('iv этаж');
+	 	$('span.stage__nav-text').text('iv этап');
 	 	$('.stage__floor').find('li > a').removeClass();
 	 	$("a[href='#" + hash + "']").addClass('stage__floor-active');
   }
@@ -75,16 +75,16 @@ $(document).ready(function() {
       link.addClass('stage__floor-active');
   		if( hash === 'floor-1') {
 
-	 	$('span.stage__nav-text').text('i этаж');
+	 	$('span.stage__nav-text').text('i этап');
 	 }
 	 else if(hash === 'floor-2') {
-	 	$('span.stage__nav-text').text('ii этаж');
+	 	$('span.stage__nav-text').text('ii этап');
 	 }
 	 else if(hash === 'floor-3') {
-	 	$('span.stage__nav-text').text('iii этаж');
+	 	$('span.stage__nav-text').text('iii этап');
       }
       else if(hash === 'floor-4') {
-	 	$('span.stage__nav-text').text('iv этаж');
+	 	$('span.stage__nav-text').text('iv этап');
       }
   	},200);		
   	
