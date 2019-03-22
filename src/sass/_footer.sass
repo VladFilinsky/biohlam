@@ -1,0 +1,62 @@
+.footer-wrapper
+	width: 100%
+	min-height: 200px
+	background-color: $foot
+footer
+	padding: 50px
+	justify-content: space-between
+.footer__logo
+	img
+		max-width: 250px
+	span
+		margin-left: 65px
+		font-size: 10px
+		opacity: .5
+.footer__nav
+	width: 400px
+	justify-content: space-between
+	border-top: 4px solid rgba(#fff, .05)
+	padding-top: 17px
+	a
+		font-size: 14px
+		color: #f4f4f4
+		text-decoration: underline #f4f4f4
+		&:hover
+			color: darken(#f4f4f4, 20%)
+.footer__contact
+	font-family: rl
+	border-left: 2px solid rgba(#fff, .05)
+	padding-left: 20px
+	color: #f4f4f4
+	font-size: 18px
+	text-align: right
+	width: 200px
+	p
+		margin-bottom: 10px
+		padding-right: 30px
+		position: relative
+	p:first-child,p:last-child
+		&:before
+			content: ''
+			position: absolute
+			width: 15px
+			height: 15px
+			top: 5px
+			right: 0
+			background: url(../img/svgo/tel.svg) center no-repeat
+			background-size: 15px
+	p:last-child
+		&:before
+			background: url(../img/svgo/mail.svg) center no-repeat
+
+.root	
+	width: 100%
+	padding: 25px
+	background-color: #474747
+	p
+		font-size: 12px
+		text-transform: uppercase
+		font-family: rl
+		color: #fff
+		opacity: .3
+		text-align: center

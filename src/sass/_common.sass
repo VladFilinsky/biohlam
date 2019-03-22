@@ -10,6 +10,8 @@ $grey: #757575
 $text: #333333
 $link: #848b94
 $line: #75777d
+$foot: #373737
+$btn: #28a7e4
 
 body
   font-family: 'rt', sans-serif
@@ -54,6 +56,23 @@ header, footer, section
 	&:active
 		color: $text
 		background-color: darken(#fff, 20%)
+	&__sky
+		background-color: $btn
+		padding: 18px 0
+		&:hover
+			background-color: #fff
+		&:active
+			background-color: darken(#fff, 20%)
+	&__grey
+		background-color: $accent
+		padding: 15px 31px
+		&:hover
+			color: #fff
+			background-color: lighten($accent, 20%)
+		&:active
+			color: #fff
+			background-color: darken($accent, 10%)
+
 		// Заголовок секции
 .section-title
 	margin-top: 80px
@@ -111,3 +130,20 @@ header, footer, section
 		background-repeat: no-repeat
 		background-size: 25px
 		background-position: center
+form
+	width: 100%
+	input, textarea
+		width: 100%
+		padding: 10px 30px
+		background-color: transparent
+		color: #fff
+		font-size: 14px
+		border: none
+		border-bottom: 2px solid #fff
+		margin-bottom: 10px
+		outline: none 
+		resize: none
+		&::placeholder
+			color: #fff
+	.btn__form
+		margin-top: 10px
