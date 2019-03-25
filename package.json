@@ -67,6 +67,7 @@
     "lodash": "^4.3.0"
   },
   "dependencies": {
+    "magnific-popup": "^1.1.0",
     "owl.carousel": "^2.3.4"
   }
 }

@@ -1,7 +1,23 @@
 import $ from 'jquery';
 import owlCarousel from 'owl.carousel';
+import magnificPopup from 'magnific-popup';
 
 $(document).ready(function() {
+
+  $('a[href="#text"], a[href="#callback"], a[href="#thanks"], a[href="#slider"]').magnificPopup({
+    type: 'inline',
+    removalDelay: 500,
+    closeMarkup: '<button title="%title%" type="button" class="modal-close mfp-close">&times;</button>',
+    callbacks: {
+      beforeOpen: function() {
+        this.st.mainClass = this.st.el.attr('data-effect');
+      },
+      open: function() {
+        //$('.modal').addClass('modal-logo').delay(300).fadeIn();
+      }
+    },
+    midClick: true
+  });
   	var hash = location.hash.slice(1);
 	 if( hash === 'm_1') {
 	 	$('a[href="#m_1"]').addClass('list__active');
@@ -16,8 +32,56 @@ $(document).ready(function() {
   $('.listimg__left').on('click', 'a', function() {
   	$('.listimg__left .list__active').removeClass();
   	$(this).addClass('list__active');
-
   });
+
+  $('#slider').owlCarousel({
+    items:1,
+    loop:true,
+    dots: false,
+    nav: true,
+    navText: ['<span class="popup__nav-prev popup__nav"></span>',
+      '<span class="popup__nav-next popup__nav"></span>']
+  });
+
+  /* MODAL "VIDEO" */
+  $('.js-video').magnificPopup({
+    type: 'iframe',
+    removalDelay: 500,
+    iframe: {
+      markup: '<div class="modal modal-video mfp-with-anim">'+
+              '<div class="mfp-iframe-scaler">'+
+              '<div class="mfp-close modal-close"></div>'+
+              '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+              '</div>'+
+              '</div>', 
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: 'v=', 
+          src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe.
+        },
+        vimeo: {
+          index: 'vimeo.com/',
+          id: '/',
+          src: '//player.vimeo.com/video/%id%?autoplay=1'
+        },
+        gmaps: {
+          index: '//maps.google.',
+          src: '%id%&output=embed'
+        }
+      },
+      srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+    },
+    callbacks: {
+      beforeOpen: function() {
+        this.st.mainClass = this.st.el.attr('data-effect');
+      },
+      open: function() {
+        //$('.modal').addClass('modal-logo').delay(300).fadeIn();
+      }
+    }
+  });
+
   $('.listimg__slider').owlCarousel({
   	items:1,
     loop:false,

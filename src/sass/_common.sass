@@ -2,7 +2,7 @@
 +font('rt', 'RobotoRegular')
 +font('bold', 'RobotoBold')
 +font('rl', 'RobotoLight')
-+font('rm', 'RobotoMedium')
++font('rh', 'RobotoThin')
 // ОСНОВНЫЕ ЦВЕТА
 $accent: #4a5666
 $icon: #385991
@@ -136,14 +136,42 @@ form
 		width: 100%
 		padding: 10px 30px
 		background-color: transparent
-		color: #fff
 		font-size: 14px
 		border: none
-		border-bottom: 2px solid #fff
+		border-bottom: 2px solid
 		margin-bottom: 10px
 		outline: none 
 		resize: none
 		&::placeholder
 			color: #fff
-	.btn__form
+	button
 		margin-top: 10px
+		width: 100%
+.form__box
+	position: relative
+	.list__item
+		position: relative
+		padding-left: 80px
+		&:before
+			content: ''
+			position: absolute
+			width: 2px
+			height: 100%
+			background-color: #696969
+			top: 0
+			left: 60px
+		h4
+			padding: 0
+			font-family: rh
+			font-size: 18px
+			line-height: 1.5
+			strong
+				font-family: rt
+		span
+			border: none
+			background-size: 50px
+		p
+			color: #eaeaee
+			margin-top: 20px
+			font-size: 14px
+

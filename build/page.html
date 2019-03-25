@@ -30,7 +30,7 @@
           </nav>
           <div class="feedback">
             <a href="tel:+79009000909">+7(900) <strong>900-09-09</strong></a>
-            <a href="#" class="btn">заказать звонок</a>
+            <a href="#callback" class="btn" data-effect="mfp-move-from-top">заказать звонок</a>
           </div>
         </header>
         <section class="content flex">
@@ -286,7 +286,7 @@
               <h4>природоохранным законодательством <br>и <a href="#" target="_blank">нормативными документами</a></h4>
             </div>
             <p>Все технологические этапы процесса производятся на свежем воздухе в полевых условиях с помощью специальной строительной техники и генераторов электроэнергии.</p>
-            <button class="btn btn__grey">Подробнее о нормативных актах </button>
+            <button class="btn btn__grey">Подробнее о нормативных актах</button>
           </div>
         </div>
       </section>
@@ -298,16 +298,17 @@
         </div>
         <p>Испытания и дальнейшее использование технологии "БИОШЛАМ" создает уникальные<br> преимущества для наших партнеров</p>
         <div class="partner__content flex">
-          <div class="partner__form">
+          <div class="form__box partner__form">
             <div class="list__item">
               <span style="background-image: url(img/svgo/phone-blue.svg);"></span>
-              <p>вы всегда можете <br>задать вопрос<br><strong>по телефону <br> 8 800 777 89 07</strong></p>
+              <h4>вы всегда можете <br>задать вопрос<br><strong>по телефону <br> 8 800 777 89 07</strong></h4>
               <p>Или отправте <br>нам заявку</p>
             </div>
             <form name="callback">
-              <input type="text" placeholder="Ваше имя">
-              <input type="text" placeholder="Ваш телефон">
-              <textarea name="partner" cols="30" rows="7" placeholder="Ваш вопрос"></textarea>
+              <input type="text" name="name" placeholder="Ваше имя">
+              <input type="tel" name="phone" placeholder="Ваш телефон *" required>
+              <textarea name="question" cols="30" rows="7" placeholder="Ваш вопрос"></textarea>
+              <input type="hidden" name="callback-form">
               <button class="btn btn__sky">отправить заявку</button>
             </form>
             <div class="partner__form-icon">
@@ -320,7 +321,12 @@
               <h4>СЕРДЮК МИХАИЛ ИВАНОВИЧ</h4>
               <p>генеральный директор<br>ООО «БИОШЛАМ»</p>
             </div>
-            <span>Испытывая и применяя в своей деятельности уникальную российскую разработку, партнеры компании «Биошлам» не только создают имидж отраслевых инновационных лидеров, заинтересованных в технологическом развитии, но и формируют репутацию социально-ответственного бизнеса, инвестирующего в сохранение окружающей среды </span>
+            <span>Испытывая и применяя в своей деятельности уникальную российскую разработку, партнеры компании «Биошлам» не только создают имидж отраслевых инновационных лидеров, заинтересованных в технологическом развитии, но и формируют репутацию социально-ответственного бизнеса, инвестирующего в сохранение окружающей среды <br>
+              <a href="#slider" data-effect="mfp-move-from-top">Галерея</a>
+              <a href="#text" data-effect="mfp-move-from-top">Текст</a>
+              <a href="#thanks" data-effect="mfp-move-from-top">Спасибо</a>
+              <a href="https://www.youtube.com/watch?v=mDFBTdToRmw" class="js-video" data-effect="mfp-move-from-top">Видео</a>
+            </span>
             <button class="btn btn__grey">о нашей технологии</button>
           </div>
         </div>
@@ -350,6 +356,38 @@
         <div class="root">
           <p>ООО «БИОШЛАМ» 2019</p>
         </div>
+      </div>
+      <!-- Modal "TEXT" -->
+      <div class="modal mfp-with-anim mfp-hide" id="text">
+        <h4>Далеко-далеко за словесными горами в стране.</h4>
+        <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Продолжил, предупреждал текст последний ведущими! Агенство по всей дороге точках прямо большой, что рот языкового, выйти на берегу родного толку составитель вопрос. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis</p>
+      </div>
+      <!-- Modal "CALLBACK" -->
+      <div class="form__box modal mfp-with-anim mfp-hide" id="callback">
+        <div class="list__item">
+          <span style="background-image: url(img/svgo/phone-blue.svg);"></span>
+          <h4>вы всегда можете <br>задать вопрос<br><strong>по телефону <br> 8 800 777 89 07</strong></h4>
+          <p>Или отправте <br>нам заявку</p>
+        </div>
+        <form name="popup-form">
+          <input type="text" name="name" placeholder="Ваше имя">
+          <input type="tel" name="phone" placeholder="Ваш телефон *" required>
+          <textarea name="question" cols="30" rows="7" placeholder="Ваш вопрос"></textarea>
+          <input type="hidden" name="popup">
+          <button class="btn btn__sky">отправить заявку</button>
+        </form>
+      </div>
+      <!-- Modal "THANKS" -->
+      <div class="modal mfp-with-anim mfp-hide" id="thanks">
+        <p>Спасибо за заявку. <br>Наш менеджер свяжется с вами <br>в течении 10 минут</p>
+        <hr>
+      </div>
+      <!-- Modal "SLIDER" -->
+      <div class="modal owl-carousel mfp-with-anim mfp-hide" id="slider">
+        <div class="sl" style="background-image: url(img/slider/1.jpg);"></div>
+        <div class="sl" style="background-image: url(img/slider/2.jpg);"></div>
+        <div class="sl" style="background-image: url(img/slider/3.jpg);"></div>
+        <div class="sl" style="background-image: url(img/slider/4.jpg);"></div>
       </div>
       <!-- 
 

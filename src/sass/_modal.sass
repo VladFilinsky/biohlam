@@ -1,0 +1,135 @@
+.modal
+	position: relative
+	min-width: 300px
+	max-width: 440px
+	padding: 60px 40px
+	margin: 250px auto
+	background-color: #fff
+	color: #333
+	+xs
+		margin: 140px auto
+		ma
+	&:before
+		content: ''
+		position: absolute
+		top: -220px
+		left: 50%
+		transform: translateX(-50%)
+		max-width: 200px
+		width: 100%
+		height: 180px
+		background-image: url(../img/svgo/logo-overlay.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 100%
+		+xs
+			max-width: 100px
+			top: -160px
+	&-close
+		margin: 10px 10px 0 0
+		font-family: rh
+		font-size: 50px
+
+.mfp-move-from-top.mfp-ready.mfp-bg
+	background-color: #333
+	opacity: .97 !important
+
+	/* Сверху */
+.mfp-move-from-top .mfp-content
+	vertical-align: top
+.mfp-move-from-top .mfp-with-anim 
+	opacity: 0
+	transition: all 0.2s
+	transform: translateY(-100px)
+.mfp-move-from-top.mfp-bg 
+	opacity: 0
+	transition: all 0.2s
+.mfp-move-from-top.mfp-ready .mfp-with-anim 
+	opacity: 1
+	transform: translateY(0)
+.mfp-move-from-top.mfp-ready.mfp-bg 
+	opacity: 0.8
+.mfp-move-from-top.mfp-removing .mfp-with-anim 
+	transform: translateY(-50px)
+	opacity: 0
+.mfp-move-from-top.mfp-removing .mfp-bg 
+	opacity: 0
+
+#text
+	font-size: 18px
+	color: #333
+	text-align: center
+	+xs
+		padding: 
+			left: 10px
+			right: 10px
+	h4
+		text-transform: uppercase
+	p
+		font-family: rt
+		margin-top: 20px
+#callback
+	padding: 60px
+	+xs
+		padding: 60px 10px 40px 10px
+	.list__item
+		color: #333
+		p
+			color: #333
+	form
+		input, textarea
+			&::placeholder
+				color: #333
+#thanks
+	padding: 50px 30px 40px 30px
+	p
+		text-align: center
+		margin-bottom: 30px
+		line-height: 1.7
+#slider
+	padding: 0
+	max-width: 800px
+	width: 100%
+	.modal-close
+		position: absolute
+		top: -60px
+		right: -20px
+		color: #fff
+		opacity: .6
+		&:hover
+			opacity: 1
+	.sl
+		min-height: 500px
+		width: 100%
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		+xs
+			min-height: 250px
+	.owl-nav
+		height: 0
+	.popup__nav
+		display: inline-block
+		position: absolute
+		top: 50%
+		margin-top: -25px
+		width: 50px
+		height: 50px
+		background: url(../img/svgo/next.svg) center no-repeat
+		background-size: 45px
+		&-next
+			right: -70px
+			+xs
+				right: 0
+		&-prev
+			left: -70px
+			transform: rotate(180deg)
+			+xs
+				left: 0
+.modal-video
+	max-width: 800px
+	padding: 0
+	.mfp-close
+		font-family: rh
+		font-size: 40px
+		top: -50px
