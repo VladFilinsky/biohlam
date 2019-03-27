@@ -38,6 +38,18 @@ header, footer, section
 	flex-wrap: wrap
 	max-width: 1280px
 	margin: 0 auto
+	+r(1300)
+		padding: 0 5%
+		width: 100%
+	> p
+		font-family: rl
+		font-size: 18px
+		padding-right: 40%
+		color: $grey
+		+sm
+			margin-top: 10px
+			text-align: center
+			padding: 0
 .flex
 	display: flex
 	flex-wrap: wrap
@@ -45,7 +57,7 @@ header, footer, section
 	display: inline-block
 	padding: 10px 20px
 	text-transform: uppercase
-	font-size: 12px
+	font-size: 14px
 	background-color: $text
 	box-shadow: 0px 3px 6.65px 0.35px rgba(0, 0, 1, 0.09)
 	color: #fff
@@ -73,7 +85,7 @@ header, footer, section
 			color: #fff
 			background-color: darken($accent, 10%)
 
-		// Заголовок секции
+// Заголовок секции
 .section-title
 	margin-top: 80px
 	width: 100%
@@ -81,11 +93,19 @@ header, footer, section
 	flex-wrap: no-wrap
 	justify-content: space-between
 	color: #333
+	+sm
+		margin-top: 50px
 	h2
 		font-size: 22px
 		line-height: 1.45
 		position: relative
 		display: inline-block
+		+sm
+			display: block
+			width: 100%
+			text-align: center
+		+xs
+			font-size: 24px
 		span
 			font-family: rl
 	&__icon
@@ -98,12 +118,16 @@ header, footer, section
 		background-repeat: no-repeat
 		background-size: 25px
 		background-position: center
+		+sm
+			display: none
 .line
 	display: inline-block
 	flex-grow: 1
 	height: 100%
 	margin: 14px 15px 0 15px
 	border-top: 1px solid #acacac
+	+sm
+		display: none
 // Список с изображением
 .iconList
 	li
@@ -130,6 +154,34 @@ header, footer, section
 		background-repeat: no-repeat
 		background-size: 25px
 		background-position: center
+.list
+	&__item
+		width: 100%
+		position: relative
+		padding-left: 75px
+		min-height: 55px
+		margin-bottom: 30px
+		color: #fff
+		span
+			position: absolute
+			display: inline-block
+			left: 0
+			top: 0
+			width: 55px
+			height: 55px
+			border: 3px solid $icon
+			border-radius: 50%
+			background-repeat: no-repeat
+			background-size: 25px
+			background-position: center
+		h4
+			text-transform: uppercase
+			font-size: 14px
+			padding-top: 7px
+		p
+			font-size: 14px
+			font-family: rl
+			margin-top: 7px
 form
 	width: 100%
 	input, textarea

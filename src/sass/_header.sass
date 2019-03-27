@@ -1,7 +1,11 @@
 .header
 	justify-content: space-between
 	font-size: 12px
-	min-height: 120px
+	min-height: 150px
+	+lg
+		min-height: 200px
+	+sm
+		padding-top: 40px
 	&-wrapper
 		position: relative
 		background-color: $accent
@@ -9,6 +13,8 @@
 		background-size: cover
 		background-position: center top
 		min-height: 400px
+		+sm
+			background-position: left top
 		&:after
 			content: ''
 			top: 0
@@ -29,20 +35,47 @@
 			background-repeat: no-repeat
 			background-size: cover
 			background-position: center
+			+sm
+				background: none
 .logo
 	display: flex
 	flex-wrap: wrap
 	flex-direction: column
 	justify-content: center
+	+sm
+		margin: 0 auto
+		padding-left: 150px
+		margin-bottom: 40px
+		a
+			display: inline-block
+			width: 180px
+			height: 140px
+			background: url(../img/svgo/logo-tablet.svg) center no-repeat
+		span
+			margin: 10px 0 0 0
+			text-align: center
+	+xs
+		padding: 0
+		margin-bottom: 0
 	img
-		max-width: 190px	
+		max-width: 190px
+		+sm
+			display: none
 	span
 		margin: 0 0 0 auto
 		color: #ffffff
 		font-family: rl
 nav
+	+lg
+		order: 3
+		width: 100%
 	ul
 		align-items: center
+		+lg
+			margin: 0 auto
+		+xs
+			flex-direction: column
+			justify-content: center
 		li
 			display: inline-block
 			margin: 0 15px
@@ -50,90 +83,172 @@ nav
 				font-size: 14px
 				text-transform: uppercase
 				color: #fff
-				display: inline-block
 				position: relative
-				padding-bottom: 3px
-				&::before
-					content: ''
-					bottom: 0
-					width: 0
-					height: 2px
-					position: absolute
-					background-color: #aeb1b2
-					transition: width .25s ease-in-out
+				border-bottom-width: 3px
+				border-bottom-style: solid
+				border-bottom-color: transparent
+				padding-bottom: 10px
+				transition: all 0.35s ease
+				+xs
+					font-size: 22px
 				&:hover
-					&::before
-						width: 100%
-.menu-active
-	&::before
-		width: 100%
+					padding-bottom: 2px
+					border-bottom-color: rgb(40, 167, 228)
+
+.m-active
+	padding-bottom: 2px
+	border-bottom-color: rgb(40, 167, 228)
+// MOBILE MENU
+.mobile__nav
+	+xs
+		display: block
+		position: fixed
+		top: 0
+		left: 0
+	display: none
+	width: 70px
+	height: 70px
+	background-color: #dfdfdf
+	position: relative
+	z-index: 10
+	span
+		position: absolute
+		width: 20px
+		height: 3px
+		display: block
+		background-color: $accent
+		top: 50%
+		left: 60%
+		transform: translate(-50%,-50%)
+		transition: .5s
+		transition-delay: .5s
+		&:before
+			content: ''
+			position: absolute
+			width: 30px
+			height: 100%
+			background-color: $accent
+			display: block
+			top: -8px
+			right: 0
+		&:after
+			content: ''
+			position: absolute
+			width: 25px
+			height: 100%
+			background-color: $accent
+			display: block
+			top: 8px
+			right: 0
 .feedback
 	display: flex
 	align-items: center
+	+sm
+		flex-direction: column
+		align-items: center
+	+xs
+		display: none
 	a:first-child
 		color: #ffffff
 		font-size: 16px
 		margin-right: 20px
+		+sm
+			margin: 0	0	15px	0
 		strong
 			font-size: 20px
 			font-weight: 400
-			
 .content
 	color: #ffffff
 	padding: 100px 0 150px 0
+	+r(1300)
+		padding: 50px 5%
+	+lg
+		justify-content: center
 	&-title
 		width: 35%
+		+lg
+			width: 48%
+		+sm
+			width: 100%
+			text-align: center
 		h1
 			text-transform: uppercase
 			font-size: 48px
 			position: relative
 			padding-bottom: 20px
+			+xs
+				font-size: 30px
 			&::before
 				content: ''
 				position: absolute
 				left: 0
 				bottom: 0
-				height: 2px
+				height: 3px
 				width: 20%
 				background-color: $line
+				+sm
+					left: 40%
 		p
 			margin: 20px 0
 			font-family: rl
 		button
 			padding: 20px 30px
+			+sm
+				display: none
+			+xs
+				display: block
+				margin: 40px auto
 		a
 			color: #ffffff
 			transition: color .25s ease
+			+sm
+				display: none
 			&:hover
 				color: $link
 	&-list
 		min-width: 250px
 		margin: 16px 0 0 100px
-.list
-	&__item
-		width: 100%
-		position: relative
-		padding-left: 75px
-		min-height: 55px
-		margin-bottom: 30px
-		color: #fff
-		span
-			position: absolute
-			display: inline-block
-			left: 0
-			top: 0
-			width: 55px
-			height: 55px
-			border: 3px solid $icon
-			border-radius: 50%
-			background-repeat: no-repeat
-			background-size: 25px
-			background-position: center
-		h4
-			text-transform: uppercase
-			font-size: 14px
-			padding-top: 7px
-		p
-			font-size: 14px
-			font-family: rl
-			margin-top: 7px
+		+lg
+			width: 48%
+			margin: 0
+			padding-top: 20px
+		+sm
+			margin: 40px 0 0 0
+			width: 100%
+			text-align: center
+		button
+			display: none
+			+sm
+				display: block
+				margin: 20px auto
+				padding: 18px 40px
+			+xs
+				display: none
+		a
+			display: none
+			+xs
+				display: inline-block
+				
+	.list
+		&__item
+			+sm
+				padding: 95px 0 0 0
+				text-align: center
+				width: 48%
+				display: inline-block
+				margin-bottom: 40px
+				h4
+					font-size: 16px
+					margin-bottom: 10px
+				p
+					font-size: 16px
+				span
+					width: 84px
+					height: 84px
+					left: 50%
+					margin-left: -42px
+					background-size: 40px
+					border: 4px solid $icon
+			+xs
+				width: 100%
+

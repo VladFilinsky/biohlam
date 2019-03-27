@@ -10,10 +10,14 @@
 		text-align: center
 		overflow: hidden
 		position: relative
-		&:first-child
-			border-top: 10px solid #e8e8e8
-		&:last-child
-			border-top: 10px solid #e8e8e8
+		border-top: 10px solid #e8e8e8
+		+sm
+			width: 100%
+			min-height: 0
+		// &:first-child
+		// 	border-top: 10px solid #e8e8e8
+		// &:last-child
+		// 	border-top: 10px solid #e8e8e8
 		&-box
 			position: relative
 			width: 100%
@@ -40,10 +44,10 @@
 			height: 100%
 			transform: translateY(-100%)
 			background-color: $accent
-			transition: transform .25s ease
+			transition: transform .35s ease
 		&:hover
 			color: #fff
-			border-top: 10px solid $accent
+
 			&:after
 				transform: translateY(0)	
 	&__img
@@ -82,19 +86,32 @@
 	p
 		font-family: rl
 		font-size: 24px
+// METHOD
 .method__icons
 	margin-top: 40px
+	+xs
+		display: none
 .listimg
 	width: 100%
 	padding: 75px 0 30px 0
 	flex-wrap: nowrap
 	align-items: flex-start
 	color: #333
+	+xs
+		flex-wrap: wrap
+		padding: 30px 0 
 	&__left
 		min-width: 440px
 		margin-right: 80px
 		border-bottom: 5px solid #e8e8e8
-		a
+		+md
+			min-width: 300px
+		+sm
+			min-width: 250px
+			margin-right: 60px
+		+xs
+			display: none
+		&-box
 			display: inline-block
 			margin-bottom: 20px
 			width: 100%
@@ -107,6 +124,8 @@
 			color: #333
 			filter: saturate(0)
 			transition: all .25s ease
+			+xs
+				filter: none
 			&:after
 				content: ''
 				position: absolute
@@ -117,9 +136,8 @@
 				background-color: #fff
 				opacity: .4
 				transition: all .25s ease
-			&:first-child
-				background-position: left -70px
-				background-size: 160%
+				+xs
+					background-color: #000
 			&:focus
 				color: #fff
 				filter: saturate(1)
@@ -135,8 +153,25 @@
 				font-size: 26px
 				position: relative
 				z-index: 1
+				+md
+					font-size: 20px
 	&__right
 		width: 100%
+		+xs
+			> h3
+				display: none
+			p
+				font-size: 30px
+			padding-bottom: 30px
+		> span
+			display: none
+			+xs
+				display: inline-block
+				> h4
+					color: #fff
+					text-align: center
+					font-size: 24px
+
 		h3
 			font-size: 30px
 			text-transform: uppercase
@@ -148,6 +183,8 @@
 			margin-bottom: 30px
 		&-item
 			li
+				+md
+					padding-right: 0
 				&:before
 					top: 2px
 					left: 0
@@ -166,27 +203,38 @@
 		position: absolute
 		height: 0
 		width: 0
-		top: 30px
-		right: -60px
-		border-top: 70px solid transparent
-		border-left: 50px solid #e8e8e8
-		border-bottom: 70px solid transparent
+		top: 20px
+		right: -50px
+		border-top: 80px solid transparent
+		border-left: 40px solid #e8e8e8
+		border-bottom: 80px solid transparent
 .listimg__slider
 	width: 100%
 	overflow-x: hidden
+	.owl-nav
+		display: none
+.listimg__slider.owl-carousel
+	+xs
+		display: block !important
 	// TECHNO
 .techno-wrapper
 	background-color: #e8e8e8
 	margin-top: 70px
+	+xs
+		margin: 0
+		padding-top: 40px
 .techno
-	p
-		font-size: 18px
-		color: $grey
-		font-family: rl
+	+xs
+		background-color: #e8e8e8
 .stage__floor
 	position: absolute
-	left: 0
 	top: -22px
+	+xs
+		flex-direction: column
+		position: relative
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
 	li
 		a
 			transition: background-color .25s ease, color .25s ease
@@ -199,12 +247,23 @@
 			border: 2px solid #e8e8e8
 			padding: 10px 50px
 			border-left: none
+			+sm
+				padding: 10px 38px
+			+xs
+				border: 2px solid #fff
+				min-width: 200px
+				margin-bottom: 10px
+				text-align: center
 		&:first-child > a
 			border-left: 2px solid #e8e8e8
+			+xs
+				border-left: 2px solid #fff
 	&-active
 		background-color: $accent
 		position: relative
 		color: #fff !important
+		+xs
+			border: 2px solid $accent !important
 		&:before
 			content: ''
 			position: absolute
@@ -216,15 +275,25 @@
 			border-left: 25px solid transparent
 			border-right: 25px solid transparent
 			border-top: 17px solid $accent
+			+xs
+				display: none
 .stage__slide
 	flex-wrap: nowrap
 	padding: 60px 0 30px 0
+	+sm
+		flex-wrap: wrap
+		flex-direction: column
+		align-items: center
 	&-img
 		width: 50%
 		margin: 15px
+		+sm
+			width: 80%
 	&-right
 		width: 50%
 		margin: 15px 15px 15px 30px
+		+sm
+			width: 100%
 		h3
 			font-family: bold
 			color: #333
@@ -232,12 +301,16 @@
 			font-size: 32px
 		&-list
 			margin-top: 30px
+			+lg
+				padding-bottom: 50px
 			li
 				&:before
 					width: 20px
 					height: 20px
 					background-image: url(../img/svgo/tick-box.svg)
 					background-size: 20px
+				+lg
+					padding-right: 0
 .stage__nav
 	position: absolute
 	display: inline-block
@@ -250,11 +323,15 @@
 	left: 52%
 	background-color: #dfdfdf
 	transition: background-color .25s ease, color .25s ease
+	+sm
+		left: 0
 	&:hover
 		background-color: $accent
 		color: #fff
 	&-next
 		left: calc(52% + 80px)
+		+sm
+			left: 80px
 	&-text
 		position: absolute
 		height: 67px
@@ -268,10 +345,15 @@
 		color: #333
 		text-transform: uppercase
 		background-color: #dfdfdf
+		+sm
+			left: 160px
+// PROFIT
 .profit__content
 	width: 100%
 	padding: 80px 0 40px 0
 	justify-content: space-between
+	+xs
+		padding: 40px 0 0 0
 	&-left,
 	&-right
 		width: 300px
@@ -279,14 +361,28 @@
 		flex-direction: column
 		justify-content: space-between
 		min-height: 350px
+		+sm
+			width: 48%
+			min-height: auto
+		+xs
+			width: 100%
 		span
 			position: relative
+			font-size: 14px
 			width: 100%
 			display: inline-block
 			background-color: #e8e8e8
 			text-align: right
-			padding: 20px 30px 20px 60px
+			padding: 20px 30px 20px 30px
 			color: #333
+			+sm
+				padding: 20px
+				text-align: left
+				min-height: 120px
+				margin-bottom: 20px
+			+xs
+				padding-left: 90px
+				font-size: 16px
 			&:before
 				content: ''
 				position: absolute
@@ -298,40 +394,122 @@
 				border-radius: 50%
 				background-repeat: no-repeat
 				background-position: center
-				background-size: 30px 
+				background-size: 25px 
+				+lg
+					display: none
+				+xs
+					display: inline-block
+					left: 10px
+			&:after
+				content: '\2022'
+				position: absolute
+				color: #000
+				top: 30%
+				right: -105px
+				font-size: 30px
+				color: #babfbf
+				+lg
+					display: none
 		h4
 			text-transform: uppercase
-			font-size: 14px
 			margin-bottom: 5px
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				width: 130px
+				right: -230px
+				height: 1px
+				background-color: #babfbf
+				+r(1300)
+					right: -138px
+					width: 40px
+				+lg
+					display: none
 		p
 			font-family: rl
-			font-size: 14px
 		span:nth-child(1)
 			&:before
 				background-image: url(../img/svgo/piggy-bank-blue.svg)
+			h4
+				&:before
+					width: 167px
+					right: -280px
+					transform: rotate(30deg) translateY(48px)
+					+r(1300)
+						width: 70px
+						right: -180px
+						transform: rotate(30deg) translateY(23px)
 		span:nth-child(2)
 			&:before
 				background-image: url(../img/svgo/garbage-blue.svg)
 		span:nth-child(3)
 			&:before
 				background-image: url(../img/svgo/time-blue.svg)
+			h4
+				&:before
+					width: 130px
+					right: -241px
+					transform: rotate(-30deg) translateY(-38px)
+					+r(1300)
+						width: 40px
+						right: -144px
+						transform: rotate(-30deg) translateY(-11px)
 	&-right
 		span
 			text-align: left
 			padding: 20px 10px 20px 30px
 			&:before
 				left: -110px
+				+lg
+					display: none
+			&:after
+				left: -105px
+				+lg
+					display: none
+			h4
+				&:before
+					left: -230px
+					+r(1300)
+						left: -138px
+						width: 40px
+					+lg
+						display: none
 		span:nth-child(1)
+			+xs
+				background-color: #fff
 			&:before
 				background-image: url(../img/svgo/clean.svg)
+			h4
+				&:before
+					width: 167px
+					left: -280px
+					transform: rotate(-30deg) translateY(48px)
+					+r(1300)
+						width: 70px
+						left: -180px
+						transform: rotate(-30deg) translateY(23px)
 		span:nth-child(2)
 			&:before
 				background-image: url(../img/svgo/glass-blue.svg)
 		span:nth-child(3)
+			+xs
+				background-color: #fff
 			&:before
 				background-image: url(../img/svgo/forest-blue.svg)
+			h4
+				&:before
+					width: 130px
+					left: -241px
+					transform: rotate(30deg) translateY(-38px)
+					+r(1300)
+						width: 40px
+						left: -144px
+						transform: rotate(30deg) translateY(-11px)
 	&-center
 		flex-grow: 1
+		+sm
+			display: none
 		span
 			display: inline-block
 			width: 100%
@@ -339,17 +517,40 @@
 			background-repeat: no-repeat
 			background-size: center 100%
 			background-position: center
+.profit__content-left
+	+xs
+		span:nth-child(2)
+			background-color: #fff
+// PROFIT END
+// SAFE
 .safe
-	p
-		font-family: rl
-		color: $grey
 	&__content
 		padding: 40px 0
 		justify-content: space-between
+		+sm
+			text-align: center
+		p
+			color: $grey
+			
 		&-item
 			padding-bottom: 80px
 			position: relative
 			width: 49%
+			+sm
+				width: 100%
+				margin-bottom: 50px
+			p
+				padding: 0 60px 0 75px
+				+md
+					padding: 0
+			button
+				position: absolute
+				left: 75px
+				bottom: 0
+				+md
+					left: 50%
+					transform: translateX(-50%)
+					white-space: nowrap
 			> span
 				display: inline-block
 				position: relative
@@ -368,8 +569,12 @@
 					bottom: -25px
 			.list__item
 				margin-top: 70px
+				+md
+					padding: 0
 				span
 					border-color: #b0b6b6
+					+md
+						display: none
 					&:before
 						content: ''
 						bottom: -155px
@@ -405,22 +610,24 @@
 					font-size: 16px
 					text-transform: uppercase
 					padding-left: 0
-			p
-				padding: 0 60px 0 75px
-			button
-				position: absolute
-				left: 75px
-				bottom: 0
+// SAFE END
+// PARTNER
 .partner
-	p
-		font-family: rl
 	&__content
 		margin-top: 50px
 	&__form
 		width: 35%
+		min-width: 400px
 		padding: 40px 65px
 		margin-right: 90px
 		background-color: $foot
+		+md
+			order: 2
+			margin: 0 auto
+		+xs
+			width: 100%
+			min-width: 0
+			padding: 40px 10px
 		input, textarea
 			color: #fff
 			border-color: #fff
@@ -431,6 +638,8 @@
 			top: 0
 			right: -90px
 			background-color: #e8e8e8
+			+xs
+				display: none
 			span
 				display: inline-block
 				position: relative
@@ -461,9 +670,16 @@
 					width: 1px
 					border-radius: 50%				
 	&__manager
-		width: 480px
-		margin-left: 150px
+		max-width: 480px
+		margin: 0 auto
 		padding-top: 40px
+		+lg
+			max-width: 400px
+			padding-top: 0
+		+md
+			order: 1
+			max-width: 700px
+			margin-bottom: 40px
 		> span
 			display: inline-block
 			position: relative
@@ -488,20 +704,33 @@
 		button
 			margin-top: 30px
 			padding: 18px 60px
+			+md
+				margin: 30px auto
+				display: block
 		.list__item
 			color: $accent
 			padding-left: 160px
 			font-size: 18px
 			min-height: 140px
+			+xs
+				padding-left: 120px
+				min-height: 120px
 			span
 				border: none
 				width: 140px
 				height: 140px
 				background-size: cover
+				+xs
+					width: 100px
+					height: 100px
 			h4
 				font-size: 18px
+				+xs
+					font-size: 16px
 			p
 				font-size: 18px
+				+xs
+					font-size: 16px
 
 
 

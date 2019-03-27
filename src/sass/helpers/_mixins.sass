@@ -17,6 +17,43 @@
     @content
 
 
+
+// =mini
+//   @media screen and (min-width: 400px)
+//     @content
+// =xs
+//   @media screen and (min-width: 500px)
+//     @content
+// =mobile
+//   @media screen and (min-width: 650px)
+//     @content
+// =tablet
+//   @media screen and (min-width: 768px)
+//     @content
+// =minWidth850
+//   @media screen and (min-width: 850px)
+//     @content
+// =desktop
+//   @media screen and (min-width: 992px)
+//     @content
+// =minWidth1400
+//   @media screen and (min-width: 1400px)
+//     @content
+// =container
+//   @media screen and (min-width: 1600px)
+//     @content
+
+// =destopAndminHeight600
+//   @media screen and (min-width: 992px) and (min-height: 650px)
+//     @content
+
+// =minHeight1050
+//   @media screen and (min-height: 1050px)
+//     @content
+
+
+
+
 @mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px)
   #{$property}: #{$max-size}#{$unit}
   #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})))

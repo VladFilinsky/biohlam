@@ -20,6 +20,16 @@
 =gpu
   transform: translate3d(0,0,0)
 
+=desktop
+  @media (min-width: 992px) and (max-width: 1199px)
+    @content
+
+=tablet
+  @media (min-width: 768px) and (max-width: 991px)
+    @content
+=lg
+  +r(1199)
+    @content
 =md
   +r(1023)
     @content
@@ -29,5 +39,5 @@
     @content
 
 =xs
-  +r(599)
+  +r(600)
     @content

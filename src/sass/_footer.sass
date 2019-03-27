@@ -3,24 +3,58 @@
 	min-height: 200px
 	background-color: $foot
 footer
-	padding: 50px
+	padding: 50px 0
 	justify-content: space-between
+	+r(1300)
+		padding: 50px 5%
+	+sm
+		padding-bottom: 20px
 .footer__logo
+	+sm
+		margin: 0 auto
+		padding: 0
+		a
+			margin: 0 auto
+
 	img
 		max-width: 250px
 	span
 		margin-left: 65px
 		font-size: 10px
 		opacity: .5
+		+sm
+			margin-top: 30px
+			font-size: 12px
 .footer__nav
 	width: 400px
 	justify-content: space-between
 	border-top: 4px solid rgba(#fff, .05)
 	padding-top: 17px
+	+md
+		flex-direction: column
+		width: 180px
+		border: none
+		padding: 0
+	+sm
+		flex-direction: row
+		width: 100%
+		min-height: 150px
+		border: none
+		border-bottom: 4px solid rgba(#fff, .05)
+		text-align: center
+		margin-top: 20px
+	+xs
+		flex-direction: column
+		padding-bottom: 20px
 	a
 		font-size: 14px
 		color: #f4f4f4
 		text-decoration: underline #f4f4f4
+		+sm
+			flex: 1 2 30%
+		+xs
+			flex: none
+			margin-bottom: 10px
 		&:hover
 			color: darken(#f4f4f4, 20%)
 .footer__contact
@@ -31,10 +65,24 @@ footer
 	font-size: 18px
 	text-align: right
 	width: 200px
+	+sm
+		border: none
+		padding: 20px 0 0 0
+		display: flex
+		width: 100%
+		justify-content: space-around
+	+xs
+		flex-direction: column
+		text-align: center
 	p
 		margin-bottom: 10px
 		padding-right: 30px
 		position: relative
+		+sm
+			padding: 0
+			padding-left: 30px
+		+xs
+			padding: 0
 	p:first-child,p:last-child
 		&:before
 			content: ''
@@ -45,6 +93,10 @@ footer
 			right: 0
 			background: url(../img/svgo/tel.svg) center no-repeat
 			background-size: 15px
+			+sm
+				left: 0
+			+xs
+				display: none
 	p:last-child
 		&:before
 			background: url(../img/svgo/mail.svg) center no-repeat
