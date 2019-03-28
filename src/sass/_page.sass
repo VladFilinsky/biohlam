@@ -2,9 +2,17 @@
 	&__cart
 		margin: 60px 0
 		color: #333
+		+sm
+			div:nth-child(2) > h4
+				display: block
+				color: #333
+				border: none
+				padding: 20px 0 0 0
 	.cart
 		width: 100%
 		justify-content: space-around
+		+sm
+			margin-top: 20px
 		&__item
 			width: 33%
 			min-height: 500px
@@ -15,18 +23,27 @@
 			+sm
 				width: 100%
 				min-height: 0
-			// &:first-child
-			// 	border-top: 10px solid #e8e8e8
-			// &:last-child
-			// 	border-top: 10px solid #e8e8e8
+				min-width: 0
+				margin: 30px 0
+				border: none
+			+md
+				width: 48%
 			&-box
 				position: relative
 				width: 100%
-				height: 440px
+				min-height: 440px
 				background-repeat: no-repeat
 				background-size: cover
 				background-position: center
+				+sm
+					min-height: auto
+					padding-top: 150px
 				&-center
+					+sm
+						min-height: 450px
+						background-size: center
+						h3
+							display: none
 					&:before
 						content: ''
 						position: absolute
@@ -34,8 +51,28 @@
 						left: 0
 						width: 100%
 						height: 100%
-						background-color: #e0e633
+						background-color: #738304
 						opacity: .1
+					span
+						display: none
+				h3
+					position: absolute
+					left: 0
+					bottom: 0
+					width: 100%
+					text-transform: uppercase
+					text-align: center
+					border-bottom: 1px solid #e8e8e8						
+					padding-bottom: 30px
+					opacity: 0
+					z-index: 2
+					span
+						font-family: rh
+					+sm
+						opacity: 1
+						position: relative
+						margin-top: 20px
+						padding-bottom: 20px
 			&:after
 				content: ''
 				position: absolute
@@ -45,9 +82,29 @@
 				height: 100%
 				transform: translateY(-100%)
 				background-color: $accent
-				transition: transform .35s ease
+				transition: transform .35s ease-in-out
+			+sm
+				pointer-events: none
 			&:hover
 				color: #fff
+				h3
+					opacity: 1
+				> h4
+					opacity: 0
+					height: 0
+					padding: 0
+				> p
+					padding: 20px 20px 0 20px
+					height: auto
+					opacity: 1
+				.cart__item-box span
+					&:after
+						opacity: 0
+					&:before
+						opacity: 0
+				.cart__item-box-center
+					span
+						display: block
 				&:after
 					transform: translateY(0)
 		&__img
@@ -57,11 +114,41 @@
 			+vcenter
 			width: 110px
 			height: 110px
-			border: 1px solid #dcdcdc
+			border: 2px solid #dcdcdc
 			border-radius: 50%
 			background-repeat: no-repeat
 			background-size: 50px
 			background-position: center
+			+sm
+				width: 150px
+				height: 150px
+				background-size: 70px
+				border: 3px solid #dcdcdc
+				top: 0
+				left: 50%
+				margin-left: -75px
+				transform: none
+			&:after
+				content: '\2193'
+				position: absolute
+				font-size: 40px
+				color: #dcdcdc
+				bottom: -150px
+				left: 50%
+				margin-left: -10px
+				+sm
+					display: none
+			&:before
+				content: ''
+				position: absolute
+				width: 2px
+				height: 80px
+				bottom: -120px
+				background-color: #dcdcdc
+				left: 50%
+				margin-left: -1px
+				+sm
+					display: none
 		h4
 			padding: 50px 0
 			text-transform: uppercase
@@ -69,10 +156,19 @@
 			position: relative
 			z-index: 2
 			border-top: 1px solid #e8e8e8
+			+sm
+				display: none
 			span
 				font-family: rl
 		p
-
+			position: relative
+			z-index: 2
+			height: 0
+			opacity: 0
+			+sm
+				height: auto
+				opacity: 1
+				padding-top: 20px
 .fact
 	padding: 40px 0 60px 0
 	width: 100%
