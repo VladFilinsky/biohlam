@@ -1,14 +1,16 @@
-.footer-wrapper
-	width: 100%
-	min-height: 200px
-	background-color: $foot
 footer
-	padding: 50px 0
+	width: 100%
+	padding: 50px 0 130px 0
+	background-color: $foot
+	+sm
+		padding: 50px 0 90px 0
+.footer-wrapper
+	max-width: 1280px
+	width: 100%
+	margin: 0 auto
 	justify-content: space-between
 	+r(1300)
-		padding: 50px 5%
-	+sm
-		padding-bottom: 20px
+		padding: 0 5%
 .footer__logo
 	+sm
 		margin: 0 auto
@@ -100,6 +102,9 @@ footer
 		&:before
 			background: url(../img/svgo/mail.svg) center no-repeat
 .root	
+	position: absolute
+	left: 0
+	bottom: 0
 	width: 100%
 	padding: 25px
 	background-color: #474747
