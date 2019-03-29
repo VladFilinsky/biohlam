@@ -1,3 +1,141 @@
+.content
+	color: #ffffff
+	padding: 250px 0 150px 0
+	+r(1300)
+		padding: 250px 5% 100px 5%
+	+sm
+		padding: 350px 5% 70px 5% 
+	+xs
+		padding: 280px 5% 70px 5%
+	+lg
+		justify-content: center
+	&-wrapper
+		position: relative
+		background-color: $accent
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center top
+		min-height: 400px
+		+sm
+			background-position: left top
+		&:after
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			position: absolute
+			background-color: #4a5666
+			opacity: .5
+		&:before
+			content: ''
+			position: absolute
+			z-index: 3
+			right: 0
+			bottom: 0
+			width: 570px
+			height: 570px
+			background-image: url(../img/bg-1.png)
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			+sm
+				background: none
+			+r(1600)
+				width: 400px
+				height: 400px
+			+lg
+				height: 300px
+				width: 300px
+			+md
+				display: none
+	&-title
+		width: 35%
+		+lg
+			width: 48%
+		+sm
+			width: 100%
+			text-align: center
+		h1
+			text-transform: uppercase
+			font-size: 48px
+			position: relative
+			padding-bottom: 20px
+			+xs
+				font-size: 30px
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				bottom: 0
+				height: 3px
+				width: 20%
+				background-color: $line
+				+sm
+					left: 40%
+		p
+			margin: 30px 0
+			font-family: rl
+		button
+			padding: 20px 30px
+			+sm
+				display: none
+			+xs
+				display: block
+				margin: 40px auto
+		a
+			color: #ffffff
+			transition: color .25s ease
+			+sm
+				display: none
+			&:hover
+				color: $link
+	&-list
+		min-width: 250px
+		margin: 16px 0 0 100px
+		+lg
+			width: 48%
+			margin: 0
+			padding-top: 20px
+		+sm
+			margin: 40px 0 0 0
+			width: 100%
+			text-align: center
+		button
+			display: none
+			+sm
+				display: block
+				margin: 20px auto
+				padding: 18px 40px
+			+xs
+				display: none
+		a
+			display: none
+			+xs
+				display: inline-block
+				
+	.list
+		&__item
+			+sm
+				padding: 95px 0 0 0
+				text-align: center
+				width: 48%
+				display: inline-block
+				margin-bottom: 40px
+				h4
+					font-size: 16px
+					margin-bottom: 10px
+				p
+					font-size: 16px
+				span
+					width: 84px
+					height: 84px
+					left: 50%
+					margin-left: -42px
+					background-size: 40px
+					border: 4px solid $icon
+			+xs
+				width: 100%
 .problem
 	&__cart
 		margin: 60px 0
@@ -20,6 +158,7 @@
 			overflow: hidden
 			position: relative
 			border-top: 10px solid #e8e8e8
+			transition: all .35s ease-in-out
 			+sm
 				width: 100%
 				min-height: 0
@@ -66,6 +205,7 @@
 					padding-bottom: 30px
 					opacity: 0
 					z-index: 2
+					color: #fff
 					span
 						font-family: rh
 					+sm
@@ -73,6 +213,7 @@
 						position: relative
 						margin-top: 20px
 						padding-bottom: 20px
+						color: #333
 			&:after
 				content: ''
 				position: absolute
@@ -82,7 +223,7 @@
 				height: 100%
 				transform: translateY(-100%)
 				background-color: $accent
-				transition: transform .35s ease-in-out
+				transition: all .35s ease-in-out
 			+sm
 				pointer-events: none
 			&:hover
@@ -105,6 +246,8 @@
 				.cart__item-box-center
 					span
 						display: block
+				.cart__img-svg
+					fill: #ffffff
 				&:after
 					transform: translateY(0)
 		&__img
@@ -119,6 +262,10 @@
 			background-repeat: no-repeat
 			background-size: 50px
 			background-position: center
+			&-svg
+				width: 50px
+				height: 110px
+				fill: #385991
 			+sm
 				width: 150px
 				height: 150px
@@ -165,10 +312,12 @@
 			z-index: 2
 			height: 0
 			opacity: 0
+			color: #fff
 			+sm
 				height: auto
 				opacity: 1
 				padding-top: 20px
+				color: #333
 .fact
 	padding: 40px 0 60px 0
 	width: 100%
@@ -227,7 +376,7 @@
 			transition: all .25s ease
 			+xs
 				filter: none
-				min-height: 160px
+				min-height: 200px
 			&:after
 				content: ''
 				position: absolute
@@ -638,6 +787,7 @@
 		justify-content: space-between
 		+sm
 			text-align: center
+			padding: 0
 		p
 			color: $grey
 			

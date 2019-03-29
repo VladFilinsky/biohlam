@@ -6,8 +6,8 @@
 	margin: 250px auto
 	background-color: #fff
 	color: #333
-	+xs
-		margin: 140px auto
+	+sm
+		margin: 120px auto
 	&:before
 		content: ''
 		position: absolute
@@ -21,18 +21,16 @@
 		background-repeat: no-repeat
 		background-position: center
 		background-size: 100%
-		+xs
+		+sm
 			max-width: 100px
-			top: -160px
+			top: -150px
 	&-close
 		margin: 10px 10px 0 0
 		font-family: rh
 		font-size: 50px
-
 .mfp-move-from-top.mfp-ready.mfp-bg
 	background-color: #333
 	opacity: .97 !important
-
 	/* Анимация "Сверху" */
 .mfp-move-from-top .mfp-content
 	vertical-align: top
@@ -53,7 +51,6 @@
 	opacity: 0
 .mfp-move-from-top.mfp-removing .mfp-bg 
 	opacity: 0
-
 #text
 	font-size: 18px
 	color: #333
@@ -85,7 +82,7 @@
 		text-align: center
 		margin-bottom: 30px
 		line-height: 1.7
-// Gallery
+// Slider
 #slider
 	padding: 0
 	max-width: 800px
@@ -107,6 +104,8 @@
 		background-position: center
 		+xs
 			min-height: 250px
+		+sm
+			min-height: 300px
 	.owl-nav
 		height: 0
 	.popup__nav
@@ -120,102 +119,19 @@
 		background-size: 45px
 		&-next
 			right: -70px
-			+xs
+			+sm
 				right: 0
 		&-prev
 			left: -70px
 			transform: rotate(180deg)
-			+xs
+			+sm
 				left: 0
 .modal-video
 	max-width: 800px
 	padding: 0
+	+sm
+		margin: 80px auto
 	.mfp-close
 		font-family: rh
 		font-size: 40px
 		top: -50px
-// MENU
-.menu 
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	height: 100vh
-	z-index: 1000
-	pointer-events: none
-	color: #fff
-	text-align: center
-	&::before
-		content: ''
-		position: absolute
-		width: 100%
-		height: 100%
-		background: rgba(34, 40, 47, 0.969)
-		right: 0
-		transition: opacity 0.3s
-		pointer-events: none
-		opacity: 0
-		z-index: -1
-	&-open
-		&::before
-			opacity: 1
-			pointer-events: auto
-			transition: all .20s ease
-		.menu_inner
-			overflow-x: auto
-			&:before
-				content: ''
-				position: absolute
-				top: 40px
-				left: 50%
-				margin-left: -90px
-				width: 180px
-				height: 140px
-				background: url(../img/svgo/logo-overlay.svg) center no-repeat
-			ul > li
-				pointer-events: auto
-				transform: translateY(0)
-				opacity: 1
-				&:nth-child(1)
-				  transition: all .4s ease
-				&:nth-child(2)
-					transition: all .6s ease
-				&:nth-child(3)
-					transition: all .8s ease
-				&:nth-child(4)
-					transition: all 1s ease
-		.close 
-			opacity: .7
-			transition: all 0.35s ease
-			pointer-events: auto
-			font-size: 70px
-			font-family: rh
-		.menu_logo
-			transition: all 0.35s ease
-			opacity: .4
-			pointer-events: auto
-	&_inner
-		display: flex
-		align-items: center
-		height: 100%
-		+xs
-			padding-top: 39px
-	ul > li
-		opacity: 0
-		margin: 0 0 30px 0
-		transform: translateY(40px)
-	&_logo
-		margin-bottom: 30px
-		opacity: 0
-		pointer-events: none
-		img 
-			width: 180px
-			height: 140px
-.close
-	position: absolute
-	top: 40px
-	right: 20px
-	opacity: 0
-	cursor: pointer
-	z-index: 1100
-	pointer-events: none

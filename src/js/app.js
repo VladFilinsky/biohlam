@@ -1,21 +1,22 @@
 import $ from 'jquery';
 import owlCarousel from 'owl.carousel';
 import magnificPopup from 'magnific-popup';
-
+import WOW from 'wowjs';
 $(document).ready(function() {
 // Изменения для мобильной версии
   $(window).on('load resize', function() {
     if ($(window).width() <= 600) {
       // Отключаем owlCarousel
-      $('.listimg__slider.owl-carousel').removeClass('js-sl-method owl-carousel');
+      $('.listimg__slider.owl-carousel').removeClass('js-sl-method owl-carousel owl-loaded');
       // Переносим nav за footer,добавляем классы
-      $('nav').insertAfter('footer');
+      $('nav').addClass('menu').insertBefore('header').css('display', 'block');
       $('nav').find('ul > li > a').removeClass();
-      $('nav').addClass('menu');
-
 
     }
   });
+  new WOW.WOW({
+    live:false
+  }).init();
   // MENU OPEN
   $('.mobile__nav').click(function() {
     $('.menu').toggleClass('menu-open');
@@ -37,7 +38,6 @@ $(document).ready(function() {
     },
     midClick: true
   });
-
   // MODAL "GALERY"
   $('#slider').owlCarousel({
     items:1,
@@ -47,7 +47,6 @@ $(document).ready(function() {
     navText: ['<span class="popup__nav-prev popup__nav"></span>',
       '<span class="popup__nav-next popup__nav"></span>']
   });
-
   /* MODAL "VIDEO" */
   $('.js-video').magnificPopup({
     type: 'iframe',
@@ -85,7 +84,6 @@ $(document).ready(function() {
       }
     }
   });
-
   // Активация элементов в блоке Method
   var hash = location.hash.slice(1);
   if( hash === 'm_1') {
@@ -102,7 +100,6 @@ $(document).ready(function() {
     $('.listimg__left-box.list__active').removeClass('list__active');
     $(this).addClass('list__active');
   });
-
   // METHOD SLIDER
   $('.js-sl-method').owlCarousel({
   	items:1,
