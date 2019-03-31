@@ -139,19 +139,61 @@ header, section
 	+sm
 		display: none
 // Список с изображением
-.iconList
+.list
 	li
 		padding: 0 50px 0 30px
 		position: relative
 		margin-bottom: 20px
 		color: $accent
-		&:before
-			content: ''
+		+md
+			padding-right: 0
+	&__circle
+		li
+			&:before
+				content: ''
+				position: absolute
+				top: 2px
+				left: 0
+				width: 18px
+				height: 18px
+				border: 3px solid $icon
+				border-radius: 50%
+	&__img
+		li
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 20px
+				height: 20px
+				background: url(../img/svgo/tick-box.svg) center no-repeat
+				background-size: 20px
+				+lg
+					padding-right: 0
+	&__numb
+		counter-reset: item
+		li
+			display: block
+			&:before
+				counter-increment: item
+				content: counter(item) '.'
+				position: absolute
+				color: $accent
+				left: 5px
+				top: 0
+				font-size: 16px
+				font-family: bold
+	&__arabik
+		span
 			position: absolute
+			left: 5px
 			top: 0
-			left: 0
-			background-repeat: no-repeat
-			background-position: center
+			width: 20px
+			height: 100%
+			text-transform: uppercase
+			color: $accent
+			font-family: bold
 // Круглые иконки
 .iconbox
 	span
@@ -164,14 +206,15 @@ header, section
 		background-repeat: no-repeat
 		background-size: 25px
 		background-position: center
-.list
-	&__item
+
+.icontext
 		width: 100%
 		position: relative
 		padding-left: 75px
 		min-height: 55px
 		margin-bottom: 30px
 		color: #fff
+		font-size: 14px
 		span
 			position: absolute
 			display: inline-block
@@ -186,10 +229,8 @@ header, section
 			background-position: center
 		h4
 			text-transform: uppercase
-			font-size: 14px
 			padding-top: 7px
 		p
-			font-size: 14px
 			font-family: rl
 			margin-top: 7px
 form
@@ -211,7 +252,7 @@ form
 		width: 100%
 .form__box
 	position: relative
-	.list__item
+	.icontext
 		position: relative
 		padding-left: 80px
 		&:before

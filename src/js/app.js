@@ -2,8 +2,19 @@ import $ from 'jquery';
 import owlCarousel from 'owl.carousel';
 import magnificPopup from 'magnific-popup';
 import WOW from 'wowjs';
+import IMask from 'imask';
 $(document).ready(function() {
-// Изменения для мобильной версии
+
+// imask
+  var phoneMask = new IMask(
+    document.getElementById('phone-mask'), {
+      mask: '+{7}(000)000-00-00'
+    });
+  var phoneMask = new IMask(
+    document.getElementById('popup-phone-mask'), {
+      mask: '+{7}(000)000-00-00'
+    });
+  // Изменения для мобильной версии
   $(window).on('load resize', function() {
     if ($(window).width() <= 600) {
       // Отключаем owlCarousel
@@ -27,6 +38,7 @@ $(document).ready(function() {
   // MODALS
   $('a[href="#text"], a[href="#callback"], a[href="#thanks"], a[href="#slider"]').magnificPopup({
     type: 'inline',
+    focus: 'input',
     removalDelay: 500,
     closeMarkup: '<button title="%title%" type="button" class="modal-close mfp-close">&times;</button>',
     callbacks: {
@@ -170,5 +182,12 @@ $(document).ready(function() {
       }
   	},200);		
   });
-
+  $('.g-slider').owlCarousel({
+    items:1,
+    loop:true,
+    dots: false,
+    nav: true,
+    navText: ['<span class="popup__nav-prev popup__nav"></span>',
+      '<span class="popup__nav-next popup__nav"></span>']
+  });
 });

@@ -1,0 +1,260 @@
+.state__wrapper
+	background-color: $grey
+	width: 100%
+	height: 400px
+.link
+	color: $btn
+	border-bottom: 1px solid $btn
+	transition: color .25s ease
+	&:hover
+		color: $grey
+		border-bottom: 1px solid $grey
+.h1
+	text-transform: uppercase
+.h2	
+	color: $accent
+	text-transform: capitalize
+.h3
+	font-family: rl
+	text-transform: uppercase
+.h4
+	color: $grey
+.h5
+	text-transform: uppercase
+.h6
+	text-transform: uppercase
+	color: $grey
+.state__text
+	.h2
+		margin-bottom: 20px
+
+	p
+		margin-bottom: 20px
+
+.breadcrumbs
+	ul
+		display: flex
+		li
+			padding-right: 30px
+			position: relative
+			line-height: 1.4
+			&:after
+				content: '\25cf'
+				position: absolute
+				right: 10px
+				color: $icon
+			&:last-child
+				&:after
+					display: none
+			a
+				color: $grey
+				line-height: 1.4
+				text-decoration: underline $grey
+
+.typical__file
+	padding: 30px 0
+	h2
+		color: $accent
+		text-transform: none
+		margin-bottom: 20px
+	.list__item
+		font-size: 16px
+		color: #333
+		span
+			border: none
+
+.quoter
+	border-top: 2px solid #dde4e9
+	border-bottom: 2px solid #dde4e9
+	padding: 60px 0 40px 0
+	margin: 20px 0
+	position: relative
+	span
+		position: absolute
+		width: 80px
+		height: 80px
+		left: 50%
+		transform: translate(-50%, -50%)
+		margin-top: -60px
+		background-color: #fff
+		&:before
+			content: '"'
+			position: absolute
+			font-size: 60px
+			line-height: 90px
+			text-align: center
+			color: #fff
+			background-color: $btn
+			width: 60px
+			height: 60px
+			left: 10px
+			top: 10px
+			border-radius: 50%
+		&:after
+				content: ''
+				position: absolute
+				width: 70px
+				height: 70px
+				left: 5px
+				top: 5px
+				border: 1px solid #dde4e9
+				border-radius: 50%
+
+.filebox
+	display: flex
+	width: 60%
+	flex-wrap: wrap
+	+md
+		width: 100%
+	.icontext
+		color: #333
+		font-size: 16px
+		width: 50%
+		padding-left: 60px
+		+xs
+			width: 100%
+		span
+			border: none
+			background-size: 40px
+		a
+			display: inline-block
+			padding-left: 30px
+			position: relative
+			color: $grey
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				width: 20px
+				height: 20px
+				background: url(../img/svgo/download.svg) center no-repeat
+				background-size: 16px
+.imgbox
+	padding-bottom: 10px
+	margin-bottom: 20px
+	border-bottom: 2px solid #dde4e9
+	position: relative
+	span
+		font-family: rl
+		position: absolute
+		color: #fff
+		text-transform: uppercase
+		left: 20px
+		bottom: 30px
+
+.calc
+	th
+		border-bottom: 2px solid #28a7e4
+		padding: 10px
+		text-align: left
+		text-transform: uppercase
+		font-family: rl
+	td
+		color: #333
+		padding: 10px
+		border-bottom: 1px solid #d7d7d7
+.cont
+	font-size: 14px
+.g-slider
+	position: relative
+	max-width: 800px
+	max-height: 600px
+	margin: 0 auto
+	.popup__nav
+		background: url(../img/svgo/next-grey.svg) center no-repeat
+		+md
+			background: url(../img/svgo/next.svg) center no-repeat
+		&-next
+			+md
+				right: 0
+		&-prev
+			+md
+				left: 0
+	
+.gallerybox
+	display: grid
+	height: auto
+	width: 100%
+	span
+		display: inline-block
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+.gallery-1
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: repeat(3,300px)
+	+sm
+		grid-template-columns: 1fr 1fr
+	+xs
+		grid-template-columns: 1fr
+		grid-template-rows: repeat(6, 200px)
+.gallery-2
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: 300px 300px
+	grid-template-areas: "item1 item2 item3" "item4 item4 item3"
+	+sm
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: "item1 item2 " "item3 item4"
+	+xs
+		grid-template-columns: 1fr
+		grid-template-rows: repeat(4, 200px)
+		grid-template-areas: "item1" "item2 " "item3" "item4"
+	span
+		&:nth-child(1)
+			grid-area: item1
+		&:nth-child(2)
+			grid-area: item2
+		&:nth-child(3)
+			grid-area: item3
+		&:nth-child(4)
+			grid-area: item4
+.gallery-3
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: 300px 300px
+	grid-template-areas: "item1 item2 item3" "item1 item4 item5"
+	+sm
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 300px 300px 300px
+		grid-template-areas: "item1 item2" "item3 item4" "item5 item5"
+	+xs
+		grid-template-columns: 1fr
+		grid-template-rows: repeat(5, 200px)
+		grid-template-areas: "item1" "item2 " "item3" "item4" "item5"
+	span
+		&:nth-child(1)
+			grid-area: item1
+		&:nth-child(2)
+			grid-area: item2
+		&:nth-child(3)
+			grid-area: item3
+		&:nth-child(4)
+			grid-area: item4
+		&:nth-child(5)
+			grid-area: item5
+.gallery-4
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: 1fr 1fr
+	grid-template-areas: "item1 item2 item5" "item3 item4 item5"
+	+sm
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 300px 300px 300px
+		grid-template-areas: "item1 item1" "item2 item3" "item4 item5"
+	+xs
+		grid-template-columns: 1fr
+		grid-template-rows: repeat(5, 200px)
+		grid-template-areas: "item1" "item2 " "item3" "item4" "item5"
+	span
+		&:nth-child(1)
+			grid-area: item1
+		&:nth-child(2)
+			grid-area: item2
+		&:nth-child(3)
+			grid-area: item3
+		&:nth-child(4)
+			grid-area: item4
+		&:nth-child(5)
+			grid-area: item5
+
+
+

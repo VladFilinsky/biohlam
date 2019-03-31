@@ -113,20 +113,16 @@
 			display: none
 			+xs
 				display: inline-block
-				
-	.list
-		&__item
+	.icontext
 			+sm
 				padding: 95px 0 0 0
 				text-align: center
+				font-size: 16px
 				width: 48%
 				display: inline-block
 				margin-bottom: 40px
 				h4
-					font-size: 16px
 					margin-bottom: 10px
-				p
-					font-size: 16px
 				span
 					width: 84px
 					height: 84px
@@ -158,7 +154,6 @@
 			overflow: hidden
 			position: relative
 			border-top: 10px solid #e8e8e8
-			transition: all .35s ease-in-out
 			+sm
 				width: 100%
 				min-height: 0
@@ -223,7 +218,19 @@
 				height: 100%
 				transform: translateY(-100%)
 				background-color: $accent
-				transition: all .35s ease-in-out
+				transition: all .45s ease-out
+			+sm
+				pointer-events: none
+			&:before
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 100%
+				transform: translateY(100%)
+				background-color: $accent
+				transition: all .45s ease-out
 			+sm
 				pointer-events: none
 			&:hover
@@ -250,7 +257,10 @@
 				.cart__img-svg
 					fill: #ffffff
 				&:after
-					transform: translateY(0)
+					transform: translateY(-50%)
+				&:before
+					transform: translateY(49%)
+					z-index: 1
 		&__img
 			display: inline-block
 			position: absolute
@@ -437,17 +447,6 @@
 			font-size: 25px
 			color: $accent
 			margin-bottom: 30px
-		&-item
-			li
-				+md
-					padding-right: 0
-				&:before
-					top: 2px
-					left: 0
-					width: 18px
-					height: 18px
-					border: 3px solid $icon
-					border-radius: 50%
 .list__active
 	color: #fff !important
 	filter: saturate(1) !important
@@ -473,15 +472,15 @@
 	+xs
 		display: none !important
 	// TECHNO
-.techno-wrapper
-	background-color: #e8e8e8
-	margin-top: 70px
-	+xs
-		margin: 0
-		padding-top: 40px
 .techno
 	+xs
 		background-color: #e8e8e8
+	&-wrapper
+		background-color: #e8e8e8
+		margin-top: 70px
+		+xs
+			margin: 0
+			padding-top: 40px
 .stage__floor
 	position: absolute
 	top: -22px
@@ -562,14 +561,6 @@
 			margin-top: 30px
 			+lg
 				padding-bottom: 50px
-			li
-				&:before
-					width: 20px
-					height: 20px
-					background-image: url(../img/svgo/tick-box.svg)
-					background-size: 20px
-				+lg
-					padding-right: 0
 .stage__nav
 	position: absolute
 	display: inline-block
@@ -830,8 +821,9 @@
 					background-color: #e8e8e8
 					left: 0
 					bottom: -25px
-			.list__item
+			.icontext
 				margin-top: 70px
+				font-size: 16px
 				+md
 					padding: 0
 				span
@@ -861,7 +853,6 @@
 
 				h4
 					color: #333
-					font-size: 16px
 					a
 						color: #333
 						text-transform: uppercase
@@ -870,7 +861,6 @@
 							color: $icon
 							text-decoration: underline $icon
 				p
-					font-size: 16px
 					text-transform: uppercase
 					padding-left: 0
 // SAFE END
@@ -970,7 +960,7 @@
 			+md
 				margin: 30px auto
 				display: block
-		.list__item
+		.icontext
 			color: $accent
 			padding-left: 160px
 			font-size: 18px
@@ -978,6 +968,7 @@
 			+xs
 				padding-left: 120px
 				min-height: 120px
+				font-size: 16px
 			span
 				border: none
 				width: 140px
@@ -986,14 +977,6 @@
 				+xs
 					width: 100px
 					height: 100px
-			h4
-				font-size: 18px
-				+xs
-					font-size: 16px
-			p
-				font-size: 18px
-				+xs
-					font-size: 16px
 
 
 
