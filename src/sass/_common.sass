@@ -32,6 +32,14 @@ body
   		display: none
 a
 	text-decoration: none
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+	&:focus::placeholder
+		color: transparent
 img
 	width: 100%
 	display: inline-block
@@ -250,6 +258,7 @@ form
 	button
 		margin-top: 10px
 		width: 100%
+
 .form__box
 	position: relative
 	.icontext
